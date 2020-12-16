@@ -1,5 +1,5 @@
-name: hqs_user_service
-description: A flutter service for user registration and management
+name: hqs_services
+description: A group of services for the hqs platform
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
