@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package UserService;
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+    rpc Create(User) returns (Response) {}
+    rpc GenerateSignupToken(User) returns (Token) {}
+    rpc Signup(User) returns (Response) {}
+    rpc Get(User) returns (Response) {}
+    rpc GetByToken(Request) returns(Response) {}
+    rpc GetByEmail(User) returns(Response) {}
+    rpc GetAll(Request) returns (Response) {}
+	rpc Delete(User) returns (Response) {}
+    rpc UpdateProfile(User) returns (Response) {}
+    rpc UpdateAllowances(User) returns (Response) {}
+    rpc UpdatePassword(UpdatePasswordRequest) returns (Response) {}
+    rpc UpdateBlockUser(User) returns (Response) {}
+    rpc Auth(User) returns (Token) {}
+    rpc ValidateToken(Token) returns (Token) {}
+    rpc BlockToken(Token) returns (Token) {}
+    rpc BlockTokenByID(BlockTokenRequest) returns (Token) {}
+    rpc BlockUsersTokens(Request) returns (Response) {}
+    rpc GetAuthHistory(Request) returns (AuthHistory) {}
+    rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse) {}
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+    string phone = 5;
+    string countryCode = 6;
+    string dialCode = 7;
+    string image = 8;
+    string description = 9;
+    string title = 10;
+    bool gender = 11;
+    bool allowView = 12;
+    bool allowCreate = 13;
+    bool allowPermission = 14;
+    bool allowDelete = 15;
+    bool allowBlock = 16;
+    bool blocked = 17;
+	google.protobuf.Timestamp createdAt = 18;
+    google.protobuf.Timestamp updatedAt = 19;
+    google.protobuf.Timestamp birthDate = 20;
+}
+
+message Token {
+    string token = 1;
+    bool valid = 2;
+    repeated Error errors = 3;
+}
+
+message Auth {
+    string tokenID = 1;
+    string userID = 2;
+    double longitude = 3;
+    double latitude = 4;
+    string device = 5;
+    bool valid = 6;
+	google.protobuf.Timestamp createdAt = 7;
+    google.protobuf.Timestamp expiresAt = 8;
+    google.protobuf.Timestamp lastUsedAt = 9;
+}
+
+message Response {
+    User user = 1;
+    repeated User users = 3;
+    repeated Error errors = 4;
+    bool Success = 5;
+}
+
+message UploadImageResponse {
+    uint32 size = 2;
+}
+
+message AuthHistory {
+    repeated Auth authHistory = 1;
+}
+
+message Request {}
+
+message UpdatePasswordRequest {
+    string oldPassword = 1;
+    string newPassword = 2;
+}
+
+message UploadImageRequest {
+    oneof data {
+        bytes chunkData = 2;
+        string token = 3;
+    };
+}
+
+message BlockTokenRequest {
+    string tokenID = 1;
+}
+
+message Error {
+    int32 code = 1;
+    string description = 2;
+}
