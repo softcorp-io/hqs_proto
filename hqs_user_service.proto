@@ -44,9 +44,10 @@ message User {
     bool allowDelete = 15;
     bool allowBlock = 16;
     bool blocked = 17;
-	google.protobuf.Timestamp createdAt = 18;
-    google.protobuf.Timestamp updatedAt = 19;
-    google.protobuf.Timestamp birthDate = 20;
+    bool admin = 18;
+	google.protobuf.Timestamp createdAt = 19;
+    google.protobuf.Timestamp updatedAt = 20;
+    google.protobuf.Timestamp birthDate = 21;
 }
 
 message Token {
