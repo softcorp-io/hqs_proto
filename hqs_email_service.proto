@@ -19,3 +19,8 @@ message Response {
     repeated Error errors = 1;
     bool Success = 2;
 }
+
+message Error {
+    int32 code = 1;
+    string description = 2;
+}
