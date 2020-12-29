@@ -8,12 +8,27 @@
 const Email$json = const {
   '1': 'Email',
   '2': const [
-    const {'1': 'from', '3': 1, '4': 1, '5': 9, '10': 'from'},
-    const {'1': 'to', '3': 2, '4': 1, '5': 9, '10': 'to'},
-    const {'1': 'header', '3': 3, '4': 1, '5': 9, '10': 'header'},
-    const {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
-    const {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
-    const {'1': 'footer', '3': 6, '4': 1, '5': 9, '10': 'footer'},
+    const {'1': 'to', '3': 1, '4': 3, '5': 9, '10': 'to'},
+    const {'1': 'resetPasswordEmail', '3': 2, '4': 1, '5': 11, '6': '.EmailService.ResetPasswordEmail', '9': 0, '10': 'resetPasswordEmail'},
+    const {'1': 'newUserEmail', '3': 3, '4': 1, '5': 11, '6': '.EmailService.InviteNewUserEmail', '9': 0, '10': 'newUserEmail'},
+  ],
+  '8': const [
+    const {'1': 'emailType'},
+  ],
+};
+
+const ResetPasswordEmail$json = const {
+  '1': 'ResetPasswordEmail',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+const InviteNewUserEmail$json = const {
+  '1': 'InviteNewUserEmail',
+  '2': const [
+    const {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
@@ -21,7 +36,6 @@ const Response$json = const {
   '1': 'Response',
   '2': const [
     const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.EmailService.Error', '10': 'errors'},
-    const {'1': 'Success', '3': 2, '4': 1, '5': 8, '10': 'Success'},
   ],
 };
 

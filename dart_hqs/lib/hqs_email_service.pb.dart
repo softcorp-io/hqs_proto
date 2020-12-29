@@ -9,14 +9,23 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+enum Email_EmailType {
+  resetPasswordEmail, 
+  newUserEmail, 
+  notSet
+}
+
 class Email extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, Email_EmailType> _Email_EmailTypeByTag = {
+    2 : Email_EmailType.resetPasswordEmail,
+    3 : Email_EmailType.newUserEmail,
+    0 : Email_EmailType.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Email', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmailService'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'header')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'body')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'footer')
+    ..oo(0, [2, 3])
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to')
+    ..aOM<ResetPasswordEmail>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resetPasswordEmail', protoName: 'resetPasswordEmail', subBuilder: ResetPasswordEmail.create)
+    ..aOM<InviteNewUserEmail>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newUserEmail', protoName: 'newUserEmail', subBuilder: InviteNewUserEmail.create)
     ..hasRequiredFields = false
   ;
 
@@ -43,65 +52,126 @@ class Email extends $pb.GeneratedMessage {
   static Email getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Email>(create);
   static Email _defaultInstance;
 
+  Email_EmailType whichEmailType() => _Email_EmailTypeByTag[$_whichOneof(0)];
+  void clearEmailType() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  $core.String get from => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set from($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasFrom() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFrom() => clearField(1);
+  $core.List<$core.String> get to => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.String get to => $_getSZ(1);
+  ResetPasswordEmail get resetPasswordEmail => $_getN(1);
   @$pb.TagNumber(2)
-  set to($core.String v) { $_setString(1, v); }
+  set resetPasswordEmail(ResetPasswordEmail v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTo() => $_has(1);
+  $core.bool hasResetPasswordEmail() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTo() => clearField(2);
+  void clearResetPasswordEmail() => clearField(2);
+  @$pb.TagNumber(2)
+  ResetPasswordEmail ensureResetPasswordEmail() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.String get header => $_getSZ(2);
+  InviteNewUserEmail get newUserEmail => $_getN(2);
   @$pb.TagNumber(3)
-  set header($core.String v) { $_setString(2, v); }
+  set newUserEmail(InviteNewUserEmail v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasHeader() => $_has(2);
+  $core.bool hasNewUserEmail() => $_has(2);
   @$pb.TagNumber(3)
-  void clearHeader() => clearField(3);
+  void clearNewUserEmail() => clearField(3);
+  @$pb.TagNumber(3)
+  InviteNewUserEmail ensureNewUserEmail() => $_ensure(2);
+}
 
-  @$pb.TagNumber(4)
-  $core.String get title => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set title($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasTitle() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearTitle() => clearField(4);
+class ResetPasswordEmail extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResetPasswordEmail', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmailService'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
+    ..hasRequiredFields = false
+  ;
 
-  @$pb.TagNumber(5)
-  $core.String get body => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set body($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasBody() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearBody() => clearField(5);
+  ResetPasswordEmail._() : super();
+  factory ResetPasswordEmail() => create();
+  factory ResetPasswordEmail.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResetPasswordEmail.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResetPasswordEmail clone() => ResetPasswordEmail()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResetPasswordEmail copyWith(void Function(ResetPasswordEmail) updates) => super.copyWith((message) => updates(message as ResetPasswordEmail)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordEmail create() => ResetPasswordEmail._();
+  ResetPasswordEmail createEmptyInstance() => create();
+  static $pb.PbList<ResetPasswordEmail> createRepeated() => $pb.PbList<ResetPasswordEmail>();
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordEmail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetPasswordEmail>(create);
+  static ResetPasswordEmail _defaultInstance;
 
-  @$pb.TagNumber(6)
-  $core.String get footer => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set footer($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasFooter() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearFooter() => clearField(6);
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => clearField(2);
+}
+
+class InviteNewUserEmail extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InviteNewUserEmail', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmailService'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
+    ..hasRequiredFields = false
+  ;
+
+  InviteNewUserEmail._() : super();
+  factory InviteNewUserEmail() => create();
+  factory InviteNewUserEmail.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InviteNewUserEmail.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InviteNewUserEmail clone() => InviteNewUserEmail()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InviteNewUserEmail copyWith(void Function(InviteNewUserEmail) updates) => super.copyWith((message) => updates(message as InviteNewUserEmail)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static InviteNewUserEmail create() => InviteNewUserEmail._();
+  InviteNewUserEmail createEmptyInstance() => create();
+  static $pb.PbList<InviteNewUserEmail> createRepeated() => $pb.PbList<InviteNewUserEmail>();
+  @$core.pragma('dart2js:noInline')
+  static InviteNewUserEmail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InviteNewUserEmail>(create);
+  static InviteNewUserEmail _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => clearField(1);
 }
 
 class Response extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmailService'), createEmptyInstance: create)
     ..pc<Error>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Success', protoName: 'Success')
     ..hasRequiredFields = false
   ;
 
@@ -130,15 +200,6 @@ class Response extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Error> get errors => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.bool get success => $_getBF(1);
-  @$pb.TagNumber(2)
-  set success($core.bool v) { $_setBool(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSuccess() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSuccess() => clearField(2);
 }
 
 class Error extends $pb.GeneratedMessage {
