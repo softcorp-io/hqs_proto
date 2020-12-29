@@ -3,20 +3,13 @@ syntax = "proto3";
 package EmailService;
 
 service EmailService {
-    rpc Send(Email) returns (Response) {}
-}
-
-message Email {
-    repeated string to = 1;
-    oneof emailType {
-        ResetPasswordEmail resetPasswordEmail = 2;
-        InviteNewUserEmail newUserEmail = 3;
-    }
+    rpc SendResetPasswordEmail(ResetPasswordEmail) returns (Response) {}
 }
 
 message ResetPasswordEmail{
-    string name = 1;
-    string token = 2;
+    repeated string to = 1;
+    string name = 2;
+    string token = 3;
 }
 
 message InviteNewUserEmail {

@@ -29,107 +29,20 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type Email struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	To []string `protobuf:"bytes,1,rep,name=to,proto3" json:"to,omitempty"`
-	// Types that are assignable to EmailType:
-	//	*Email_ResetPasswordEmail
-	//	*Email_NewUserEmail
-	EmailType isEmail_EmailType `protobuf_oneof:"emailType"`
-}
-
-func (x *Email) Reset() {
-	*x = Email{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Email) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Email) ProtoMessage() {}
-
-func (x *Email) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Email.ProtoReflect.Descriptor instead.
-func (*Email) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *Email) GetTo() []string {
-	if x != nil {
-		return x.To
-	}
-	return nil
-}
-
-func (m *Email) GetEmailType() isEmail_EmailType {
-	if m != nil {
-		return m.EmailType
-	}
-	return nil
-}
-
-func (x *Email) GetResetPasswordEmail() *ResetPasswordEmail {
-	if x, ok := x.GetEmailType().(*Email_ResetPasswordEmail); ok {
-		return x.ResetPasswordEmail
-	}
-	return nil
-}
-
-func (x *Email) GetNewUserEmail() *InviteNewUserEmail {
-	if x, ok := x.GetEmailType().(*Email_NewUserEmail); ok {
-		return x.NewUserEmail
-	}
-	return nil
-}
-
-type isEmail_EmailType interface {
-	isEmail_EmailType()
-}
-
-type Email_ResetPasswordEmail struct {
-	ResetPasswordEmail *ResetPasswordEmail `protobuf:"bytes,2,opt,name=resetPasswordEmail,proto3,oneof"`
-}
-
-type Email_NewUserEmail struct {
-	NewUserEmail *InviteNewUserEmail `protobuf:"bytes,3,opt,name=newUserEmail,proto3,oneof"`
-}
-
-func (*Email_ResetPasswordEmail) isEmail_EmailType() {}
-
-func (*Email_NewUserEmail) isEmail_EmailType() {}
-
 type ResetPasswordEmail struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name  string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Token string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+	To    []string `protobuf:"bytes,1,rep,name=to,proto3" json:"to,omitempty"`
+	Name  string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Token string   `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
 }
 
 func (x *ResetPasswordEmail) Reset() {
 	*x = ResetPasswordEmail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[1]
+		mi := &file_hqs_email_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -142,7 +55,7 @@ func (x *ResetPasswordEmail) String() string {
 func (*ResetPasswordEmail) ProtoMessage() {}
 
 func (x *ResetPasswordEmail) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[1]
+	mi := &file_hqs_email_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -155,7 +68,14 @@ func (x *ResetPasswordEmail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordEmail.ProtoReflect.Descriptor instead.
 func (*ResetPasswordEmail) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{1}
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ResetPasswordEmail) GetTo() []string {
+	if x != nil {
+		return x.To
+	}
+	return nil
 }
 
 func (x *ResetPasswordEmail) GetName() string {
@@ -183,7 +103,7 @@ type InviteNewUserEmail struct {
 func (x *InviteNewUserEmail) Reset() {
 	*x = InviteNewUserEmail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[2]
+		mi := &file_hqs_email_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -196,7 +116,7 @@ func (x *InviteNewUserEmail) String() string {
 func (*InviteNewUserEmail) ProtoMessage() {}
 
 func (x *InviteNewUserEmail) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[2]
+	mi := &file_hqs_email_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +129,7 @@ func (x *InviteNewUserEmail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InviteNewUserEmail.ProtoReflect.Descriptor instead.
 func (*InviteNewUserEmail) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{2}
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *InviteNewUserEmail) GetToken() string {
@@ -230,7 +150,7 @@ type Response struct {
 func (x *Response) Reset() {
 	*x = Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[3]
+		mi := &file_hqs_email_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -243,7 +163,7 @@ func (x *Response) String() string {
 func (*Response) ProtoMessage() {}
 
 func (x *Response) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[3]
+	mi := &file_hqs_email_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +176,7 @@ func (x *Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Response.ProtoReflect.Descriptor instead.
 func (*Response) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{3}
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Response) GetErrors() []*Error {
@@ -278,7 +198,7 @@ type Error struct {
 func (x *Error) Reset() {
 	*x = Error{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[4]
+		mi := &file_hqs_email_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -291,7 +211,7 @@ func (x *Error) String() string {
 func (*Error) ProtoMessage() {}
 
 func (x *Error) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[4]
+	mi := &file_hqs_email_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -304,7 +224,7 @@ func (x *Error) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Error.ProtoReflect.Descriptor instead.
 func (*Error) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{4}
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Error) GetCode() int32 {
@@ -326,38 +246,29 @@ var File_hqs_email_service_proto protoreflect.FileDescriptor
 var file_hqs_email_service_proto_rawDesc = []byte{
 	0x0a, 0x17, 0x68, 0x71, 0x73, 0x5f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x5f, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x45, 0x6d, 0x61, 0x69, 0x6c,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x22, 0xc0, 0x01, 0x0a, 0x05, 0x45, 0x6d, 0x61, 0x69,
-	0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x74, 0x6f, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x02, 0x74,
-	0x6f, 0x12, 0x52, 0x0a, 0x12, 0x72, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
-	0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e,
-	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73,
-	0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x48,
-	0x00, 0x52, 0x12, 0x72, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64,
-	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x46, 0x0a, 0x0c, 0x6e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72,
-	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x45, 0x6d,
-	0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x76, 0x69, 0x74,
-	0x65, 0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x48, 0x00, 0x52,
-	0x0c, 0x6e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x42, 0x0b, 0x0a,
-	0x09, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x22, 0x3e, 0x0a, 0x12, 0x52, 0x65,
-	0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c,
-	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x2a, 0x0a, 0x12, 0x49, 0x6e,
-	0x76, 0x69, 0x74, 0x65, 0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x45, 0x6d, 0x61, 0x69, 0x6c,
-	0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x37, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x2b, 0x0a, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03,
-	0x28, 0x0b, 0x32, 0x13, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x22,
-	0x3d, 0x0a, 0x05, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b,
-	0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0x45,
-	0x0a, 0x0c, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x35,
-	0x0a, 0x04, 0x53, 0x65, 0x6e, 0x64, 0x12, 0x13, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x1a, 0x16, 0x2e, 0x45, 0x6d,
-	0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x22, 0x4e, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x65, 0x74,
+	0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a,
+	0x02, 0x74, 0x6f, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x02, 0x74, 0x6f, 0x12, 0x12, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x2a, 0x0a, 0x12, 0x49, 0x6e, 0x76, 0x69, 0x74,
+	0x65, 0x4e, 0x65, 0x77, 0x55, 0x73, 0x65, 0x72, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x14, 0x0a,
+	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x22, 0x37, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x2b, 0x0a, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x13, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45,
+	0x72, 0x72, 0x6f, 0x72, 0x52, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x22, 0x3d, 0x0a, 0x05,
+	0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0x64, 0x0a, 0x0c, 0x45,
+	0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x54, 0x0a, 0x16, 0x53,
+	0x65, 0x6e, 0x64, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64,
+	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x20, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x1a, 0x16, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -372,25 +283,22 @@ func file_hqs_email_service_proto_rawDescGZIP() []byte {
 	return file_hqs_email_service_proto_rawDescData
 }
 
-var file_hqs_email_service_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_hqs_email_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_hqs_email_service_proto_goTypes = []interface{}{
-	(*Email)(nil),              // 0: EmailService.Email
-	(*ResetPasswordEmail)(nil), // 1: EmailService.ResetPasswordEmail
-	(*InviteNewUserEmail)(nil), // 2: EmailService.InviteNewUserEmail
-	(*Response)(nil),           // 3: EmailService.Response
-	(*Error)(nil),              // 4: EmailService.Error
+	(*ResetPasswordEmail)(nil), // 0: EmailService.ResetPasswordEmail
+	(*InviteNewUserEmail)(nil), // 1: EmailService.InviteNewUserEmail
+	(*Response)(nil),           // 2: EmailService.Response
+	(*Error)(nil),              // 3: EmailService.Error
 }
 var file_hqs_email_service_proto_depIdxs = []int32{
-	1, // 0: EmailService.Email.resetPasswordEmail:type_name -> EmailService.ResetPasswordEmail
-	2, // 1: EmailService.Email.newUserEmail:type_name -> EmailService.InviteNewUserEmail
-	4, // 2: EmailService.Response.errors:type_name -> EmailService.Error
-	0, // 3: EmailService.EmailService.Send:input_type -> EmailService.Email
-	3, // 4: EmailService.EmailService.Send:output_type -> EmailService.Response
-	4, // [4:5] is the sub-list for method output_type
-	3, // [3:4] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 0: EmailService.Response.errors:type_name -> EmailService.Error
+	0, // 1: EmailService.EmailService.SendResetPasswordEmail:input_type -> EmailService.ResetPasswordEmail
+	2, // 2: EmailService.EmailService.SendResetPasswordEmail:output_type -> EmailService.Response
+	2, // [2:3] is the sub-list for method output_type
+	1, // [1:2] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_hqs_email_service_proto_init() }
@@ -400,18 +308,6 @@ func file_hqs_email_service_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_hqs_email_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Email); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_hqs_email_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordEmail); i {
 			case 0:
 				return &v.state
@@ -423,7 +319,7 @@ func file_hqs_email_service_proto_init() {
 				return nil
 			}
 		}
-		file_hqs_email_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_hqs_email_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InviteNewUserEmail); i {
 			case 0:
 				return &v.state
@@ -435,7 +331,7 @@ func file_hqs_email_service_proto_init() {
 				return nil
 			}
 		}
-		file_hqs_email_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_hqs_email_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Response); i {
 			case 0:
 				return &v.state
@@ -447,7 +343,7 @@ func file_hqs_email_service_proto_init() {
 				return nil
 			}
 		}
-		file_hqs_email_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_hqs_email_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Error); i {
 			case 0:
 				return &v.state
@@ -460,17 +356,13 @@ func file_hqs_email_service_proto_init() {
 			}
 		}
 	}
-	file_hqs_email_service_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*Email_ResetPasswordEmail)(nil),
-		(*Email_NewUserEmail)(nil),
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_hqs_email_service_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -496,7 +388,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type EmailServiceClient interface {
-	Send(ctx context.Context, in *Email, opts ...grpc.CallOption) (*Response, error)
+	SendResetPasswordEmail(ctx context.Context, in *ResetPasswordEmail, opts ...grpc.CallOption) (*Response, error)
 }
 
 type emailServiceClient struct {
@@ -507,9 +399,9 @@ func NewEmailServiceClient(cc grpc.ClientConnInterface) EmailServiceClient {
 	return &emailServiceClient{cc}
 }
 
-func (c *emailServiceClient) Send(ctx context.Context, in *Email, opts ...grpc.CallOption) (*Response, error) {
+func (c *emailServiceClient) SendResetPasswordEmail(ctx context.Context, in *ResetPasswordEmail, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
-	err := c.cc.Invoke(ctx, "/EmailService.EmailService/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/EmailService.EmailService/SendResetPasswordEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -518,35 +410,35 @@ func (c *emailServiceClient) Send(ctx context.Context, in *Email, opts ...grpc.C
 
 // EmailServiceServer is the server API for EmailService service.
 type EmailServiceServer interface {
-	Send(context.Context, *Email) (*Response, error)
+	SendResetPasswordEmail(context.Context, *ResetPasswordEmail) (*Response, error)
 }
 
 // UnimplementedEmailServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedEmailServiceServer struct {
 }
 
-func (*UnimplementedEmailServiceServer) Send(context.Context, *Email) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Send not implemented")
+func (*UnimplementedEmailServiceServer) SendResetPasswordEmail(context.Context, *ResetPasswordEmail) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendResetPasswordEmail not implemented")
 }
 
 func RegisterEmailServiceServer(s *grpc.Server, srv EmailServiceServer) {
 	s.RegisterService(&_EmailService_serviceDesc, srv)
 }
 
-func _EmailService_Send_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Email)
+func _EmailService_SendResetPasswordEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResetPasswordEmail)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EmailServiceServer).Send(ctx, in)
+		return srv.(EmailServiceServer).SendResetPasswordEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/EmailService.EmailService/Send",
+		FullMethod: "/EmailService.EmailService/SendResetPasswordEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EmailServiceServer).Send(ctx, req.(*Email))
+		return srv.(EmailServiceServer).SendResetPasswordEmail(ctx, req.(*ResetPasswordEmail))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -556,8 +448,8 @@ var _EmailService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*EmailServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Send",
-			Handler:    _EmailService_Send_Handler,
+			MethodName: "SendResetPasswordEmail",
+			Handler:    _EmailService_SendResetPasswordEmail_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
