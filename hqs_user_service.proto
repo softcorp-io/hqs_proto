@@ -95,7 +95,7 @@ message UpdatePasswordRequest {
 
 message ResetPasswordRequest {
     string newPassword = 1;
-    Token token = 2;
+    string token = 2;
 }
 
 message UploadImageRequest {

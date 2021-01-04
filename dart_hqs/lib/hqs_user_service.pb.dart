@@ -656,7 +656,7 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
 class ResetPasswordRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResetPasswordRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserService'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newPassword', protoName: 'newPassword')
-    ..aOM<Token>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
@@ -693,15 +693,13 @@ class ResetPasswordRequest extends $pb.GeneratedMessage {
   void clearNewPassword() => clearField(1);
 
   @$pb.TagNumber(2)
-  Token get token => $_getN(1);
+  $core.String get token => $_getSZ(1);
   @$pb.TagNumber(2)
-  set token(Token v) { setField(2, v); }
+  set token($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasToken() => $_has(1);
   @$pb.TagNumber(2)
   void clearToken() => clearField(2);
-  @$pb.TagNumber(2)
-  Token ensureToken() => $_ensure(1);
 }
 
 enum UploadImageRequest_Data {
