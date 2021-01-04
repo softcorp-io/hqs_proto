@@ -68,10 +68,11 @@ class UserServiceClient extends $grpc.Client {
           '/UserService.UserService/EmailResetPasswordToken',
           ($0.User value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
-  static final _$resetPassword = $grpc.ClientMethod<$0.Token, $0.Response>(
-      '/UserService.UserService/ResetPassword',
-      ($0.Token value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
+  static final _$resetPassword =
+      $grpc.ClientMethod<$0.ResetPasswordRequest, $0.Response>(
+          '/UserService.UserService/ResetPassword',
+          ($0.ResetPasswordRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$auth = $grpc.ClientMethod<$0.User, $0.Token>(
       '/UserService.UserService/Auth',
       ($0.User value) => value.writeToBuffer(),
@@ -208,7 +209,8 @@ class UserServiceClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Response> resetPassword($0.Token request,
+  $grpc.ResponseFuture<$0.Response> resetPassword(
+      $0.ResetPasswordRequest request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$resetPassword, $async.Stream.fromIterable([request]),
@@ -367,12 +369,13 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.User.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Token, $0.Response>(
+    $addMethod($grpc.ServiceMethod<$0.ResetPasswordRequest, $0.Response>(
         'ResetPassword',
         resetPassword_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Token.fromBuffer(value),
+        ($core.List<$core.int> value) =>
+            $0.ResetPasswordRequest.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.User, $0.Token>(
         'Auth',
@@ -492,8 +495,8 @@ abstract class UserServiceBase extends $grpc.Service {
     return emailResetPasswordToken(call, await request);
   }
 
-  $async.Future<$0.Response> resetPassword_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Token> request) async {
+  $async.Future<$0.Response> resetPassword_Pre($grpc.ServiceCall call,
+      $async.Future<$0.ResetPasswordRequest> request) async {
     return resetPassword(call, await request);
   }
 
@@ -549,7 +552,7 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.Response> emailResetPasswordToken(
       $grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Response> resetPassword(
-      $grpc.ServiceCall call, $0.Token request);
+      $grpc.ServiceCall call, $0.ResetPasswordRequest request);
   $async.Future<$0.Token> auth($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Token> validateToken(
       $grpc.ServiceCall call, $0.Token request);

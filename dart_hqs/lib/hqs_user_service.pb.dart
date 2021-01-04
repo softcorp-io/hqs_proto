@@ -653,6 +653,57 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
   void clearNewPassword() => clearField(2);
 }
 
+class ResetPasswordRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResetPasswordRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserService'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'newPassword', protoName: 'newPassword')
+    ..aOM<Token>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token', subBuilder: Token.create)
+    ..hasRequiredFields = false
+  ;
+
+  ResetPasswordRequest._() : super();
+  factory ResetPasswordRequest() => create();
+  factory ResetPasswordRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResetPasswordRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResetPasswordRequest clone() => ResetPasswordRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResetPasswordRequest copyWith(void Function(ResetPasswordRequest) updates) => super.copyWith((message) => updates(message as ResetPasswordRequest)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordRequest create() => ResetPasswordRequest._();
+  ResetPasswordRequest createEmptyInstance() => create();
+  static $pb.PbList<ResetPasswordRequest> createRepeated() => $pb.PbList<ResetPasswordRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ResetPasswordRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetPasswordRequest>(create);
+  static ResetPasswordRequest _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get newPassword => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set newPassword($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNewPassword() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNewPassword() => clearField(1);
+
+  @$pb.TagNumber(2)
+  Token get token => $_getN(1);
+  @$pb.TagNumber(2)
+  set token(Token v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => clearField(2);
+  @$pb.TagNumber(2)
+  Token ensureToken() => $_ensure(1);
+}
+
 enum UploadImageRequest_Data {
   chunkData, 
   token, 

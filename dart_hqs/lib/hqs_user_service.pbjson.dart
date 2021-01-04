@@ -93,6 +93,14 @@ const UpdatePasswordRequest$json = const {
   ],
 };
 
+const ResetPasswordRequest$json = const {
+  '1': 'ResetPasswordRequest',
+  '2': const [
+    const {'1': 'newPassword', '3': 1, '4': 1, '5': 9, '10': 'newPassword'},
+    const {'1': 'token', '3': 2, '4': 1, '5': 11, '6': '.UserService.Token', '10': 'token'},
+  ],
+};
+
 const UploadImageRequest$json = const {
   '1': 'UploadImageRequest',
   '2': const [

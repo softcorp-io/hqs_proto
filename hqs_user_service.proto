@@ -18,7 +18,7 @@ service UserService {
     rpc UpdatePassword(UpdatePasswordRequest) returns (Response) {}
     rpc UpdateBlockUser(User) returns (Response) {}
     rpc EmailResetPasswordToken(User) returns (Response) {}
-    rpc ResetPassword(Token) returns (Response) {}
+    rpc ResetPassword(ResetPasswordRequest) returns (Response) {}
     rpc Auth(User) returns (Token) {}
     rpc ValidateToken(Token) returns (Token) {}
     rpc BlockToken(Token) returns (Token) {}
@@ -91,6 +91,11 @@ message Request {}
 message UpdatePasswordRequest {
     string oldPassword = 1;
     string newPassword = 2;
+}
+
+message ResetPasswordRequest {
+    string newPassword = 1;
+    Token token = 2;
 }
 
 message UploadImageRequest {
