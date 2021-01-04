@@ -4,6 +4,7 @@ package EmailService;
 
 service EmailService {
     rpc SendResetPasswordEmail(ResetPasswordEmail) returns (Response) {}
+    rpc Ping(Request) returns (Response) {}
 }
 
 message ResetPasswordEmail{
@@ -19,6 +20,8 @@ message InviteNewUserEmail {
 message Response {
     repeated Error errors = 1;
 }
+
+message Request{}
 
 message Error {
     int32 code = 1;

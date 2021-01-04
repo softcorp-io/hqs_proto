@@ -186,6 +186,44 @@ func (x *Response) GetErrors() []*Error {
 	return nil
 }
 
+type Request struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *Request) Reset() {
+	*x = Request{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_hqs_email_service_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Request) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Request) ProtoMessage() {}
+
+func (x *Request) ProtoReflect() protoreflect.Message {
+	mi := &file_hqs_email_service_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Request.ProtoReflect.Descriptor instead.
+func (*Request) Descriptor() ([]byte, []int) {
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{3}
+}
+
 type Error struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -198,7 +236,7 @@ type Error struct {
 func (x *Error) Reset() {
 	*x = Error{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_hqs_email_service_proto_msgTypes[3]
+		mi := &file_hqs_email_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -211,7 +249,7 @@ func (x *Error) String() string {
 func (*Error) ProtoMessage() {}
 
 func (x *Error) ProtoReflect() protoreflect.Message {
-	mi := &file_hqs_email_service_proto_msgTypes[3]
+	mi := &file_hqs_email_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -224,7 +262,7 @@ func (x *Error) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Error.ProtoReflect.Descriptor instead.
 func (*Error) Descriptor() ([]byte, []int) {
-	return file_hqs_email_service_proto_rawDescGZIP(), []int{3}
+	return file_hqs_email_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Error) GetCode() int32 {
@@ -257,18 +295,22 @@ var file_hqs_email_service_proto_rawDesc = []byte{
 	0x6b, 0x65, 0x6e, 0x22, 0x37, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x2b, 0x0a, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x13, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45,
-	0x72, 0x72, 0x6f, 0x72, 0x52, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x22, 0x3d, 0x0a, 0x05,
-	0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
-	0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0x64, 0x0a, 0x0c, 0x45,
-	0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x54, 0x0a, 0x16, 0x53,
-	0x65, 0x6e, 0x64, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64,
-	0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x20, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72,
-	0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f,
-	0x72, 0x64, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x1a, 0x16, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x72, 0x6f, 0x72, 0x52, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x22, 0x09, 0x0a, 0x07,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x3d, 0x0a, 0x05, 0x45, 0x72, 0x72, 0x6f, 0x72,
+	0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04,
+	0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0x9d, 0x01, 0x0a, 0x0c, 0x45, 0x6d, 0x61, 0x69, 0x6c,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x54, 0x0a, 0x16, 0x53, 0x65, 0x6e, 0x64, 0x52,
+	0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x45, 0x6d, 0x61, 0x69,
+	0x6c, 0x12, 0x20, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x52, 0x65, 0x73, 0x65, 0x74, 0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x45, 0x6d,
+	0x61, 0x69, 0x6c, 0x1a, 0x16, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x37, 0x0a,
+	0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x15, 0x2e, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x45,
+	0x6d, 0x61, 0x69, 0x6c, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -283,19 +325,22 @@ func file_hqs_email_service_proto_rawDescGZIP() []byte {
 	return file_hqs_email_service_proto_rawDescData
 }
 
-var file_hqs_email_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_hqs_email_service_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_hqs_email_service_proto_goTypes = []interface{}{
 	(*ResetPasswordEmail)(nil), // 0: EmailService.ResetPasswordEmail
 	(*InviteNewUserEmail)(nil), // 1: EmailService.InviteNewUserEmail
 	(*Response)(nil),           // 2: EmailService.Response
-	(*Error)(nil),              // 3: EmailService.Error
+	(*Request)(nil),            // 3: EmailService.Request
+	(*Error)(nil),              // 4: EmailService.Error
 }
 var file_hqs_email_service_proto_depIdxs = []int32{
-	3, // 0: EmailService.Response.errors:type_name -> EmailService.Error
+	4, // 0: EmailService.Response.errors:type_name -> EmailService.Error
 	0, // 1: EmailService.EmailService.SendResetPasswordEmail:input_type -> EmailService.ResetPasswordEmail
-	2, // 2: EmailService.EmailService.SendResetPasswordEmail:output_type -> EmailService.Response
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	3, // 2: EmailService.EmailService.Ping:input_type -> EmailService.Request
+	2, // 3: EmailService.EmailService.SendResetPasswordEmail:output_type -> EmailService.Response
+	2, // 4: EmailService.EmailService.Ping:output_type -> EmailService.Response
+	3, // [3:5] is the sub-list for method output_type
+	1, // [1:3] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -344,6 +389,18 @@ func file_hqs_email_service_proto_init() {
 			}
 		}
 		file_hqs_email_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Request); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_hqs_email_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Error); i {
 			case 0:
 				return &v.state
@@ -362,7 +419,7 @@ func file_hqs_email_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_hqs_email_service_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -389,6 +446,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type EmailServiceClient interface {
 	SendResetPasswordEmail(ctx context.Context, in *ResetPasswordEmail, opts ...grpc.CallOption) (*Response, error)
+	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 }
 
 type emailServiceClient struct {
@@ -408,9 +466,19 @@ func (c *emailServiceClient) SendResetPasswordEmail(ctx context.Context, in *Res
 	return out, nil
 }
 
+func (c *emailServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/EmailService.EmailService/Ping", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmailServiceServer is the server API for EmailService service.
 type EmailServiceServer interface {
 	SendResetPasswordEmail(context.Context, *ResetPasswordEmail) (*Response, error)
+	Ping(context.Context, *Request) (*Response, error)
 }
 
 // UnimplementedEmailServiceServer can be embedded to have forward compatible implementations.
@@ -419,6 +487,9 @@ type UnimplementedEmailServiceServer struct {
 
 func (*UnimplementedEmailServiceServer) SendResetPasswordEmail(context.Context, *ResetPasswordEmail) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendResetPasswordEmail not implemented")
+}
+func (*UnimplementedEmailServiceServer) Ping(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
 
 func RegisterEmailServiceServer(s *grpc.Server, srv EmailServiceServer) {
@@ -443,6 +514,24 @@ func _EmailService_SendResetPasswordEmail_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmailService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmailServiceServer).Ping(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/EmailService.EmailService/Ping",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmailServiceServer).Ping(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _EmailService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "EmailService.EmailService",
 	HandlerType: (*EmailServiceServer)(nil),
@@ -450,6 +539,10 @@ var _EmailService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendResetPasswordEmail",
 			Handler:    _EmailService_SendResetPasswordEmail_Handler,
+		},
+		{
+			MethodName: "Ping",
+			Handler:    _EmailService_Ping_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -28,6 +28,10 @@ const Response$json = const {
   ],
 };
 
+const Request$json = const {
+  '1': 'Request',
+};
+
 const Error$json = const {
   '1': 'Error',
   '2': const [

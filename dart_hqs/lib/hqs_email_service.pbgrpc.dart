@@ -19,6 +19,10 @@ class EmailServiceClient extends $grpc.Client {
           '/EmailService.EmailService/SendResetPasswordEmail',
           ($0.ResetPasswordEmail value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
+  static final _$ping = $grpc.ClientMethod<$0.Request, $0.Response>(
+      '/EmailService.EmailService/Ping',
+      ($0.Request value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
 
   EmailServiceClient($grpc.ClientChannel channel, {$grpc.CallOptions options})
       : super(channel, options: options);
@@ -28,6 +32,13 @@ class EmailServiceClient extends $grpc.Client {
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$sendResetPasswordEmail, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$0.Response> ping($0.Request request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(_$ping, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -45,6 +56,13 @@ abstract class EmailServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ResetPasswordEmail.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(
+        'Ping',
+        ping_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
+        ($0.Response value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.Response> sendResetPasswordEmail_Pre($grpc.ServiceCall call,
@@ -52,6 +70,12 @@ abstract class EmailServiceBase extends $grpc.Service {
     return sendResetPasswordEmail(call, await request);
   }
 
+  $async.Future<$0.Response> ping_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Request> request) async {
+    return ping(call, await request);
+  }
+
   $async.Future<$0.Response> sendResetPasswordEmail(
       $grpc.ServiceCall call, $0.ResetPasswordEmail request);
+  $async.Future<$0.Response> ping($grpc.ServiceCall call, $0.Request request);
 }
