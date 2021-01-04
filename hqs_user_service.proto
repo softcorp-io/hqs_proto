@@ -17,6 +17,8 @@ service UserService {
     rpc UpdateAllowances(User) returns (Response) {}
     rpc UpdatePassword(UpdatePasswordRequest) returns (Response) {}
     rpc UpdateBlockUser(User) returns (Response) {}
+    rpc EmailResetPasswordToken(User) returns (Token) {}
+    rpc ResetPassword(Token) returns (Response) {}
     rpc Auth(User) returns (Token) {}
     rpc ValidateToken(Token) returns (Token) {}
     rpc BlockToken(Token) returns (Token) {}
@@ -43,11 +45,12 @@ message User {
     bool allowPermission = 14;
     bool allowDelete = 15;
     bool allowBlock = 16;
-    bool blocked = 17;
-    bool admin = 18;
-	google.protobuf.Timestamp createdAt = 19;
-    google.protobuf.Timestamp updatedAt = 20;
-    google.protobuf.Timestamp birthDate = 21;
+    bool allowResetPassword = 17;
+    bool blocked = 18;
+    bool admin = 19;
+	google.protobuf.Timestamp createdAt = 20;
+    google.protobuf.Timestamp updatedAt = 21;
+    google.protobuf.Timestamp birthDate = 22;
 }
 
 message Token {

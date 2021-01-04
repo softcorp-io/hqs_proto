@@ -29,11 +29,12 @@ class User extends $pb.GeneratedMessage {
     ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowPermission', protoName: 'allowPermission')
     ..aOB(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowDelete', protoName: 'allowDelete')
     ..aOB(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowBlock', protoName: 'allowBlock')
-    ..aOB(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
-    ..aOM<$1.Timestamp>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthDate', protoName: 'birthDate', subBuilder: $1.Timestamp.create)
+    ..aOB(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowResetPassword', protoName: 'allowResetPassword')
+    ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
+    ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
+    ..aOM<$1.Timestamp>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthDate', protoName: 'birthDate', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -205,55 +206,64 @@ class User extends $pb.GeneratedMessage {
   void clearAllowBlock() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.bool get blocked => $_getBF(16);
+  $core.bool get allowResetPassword => $_getBF(16);
   @$pb.TagNumber(17)
-  set blocked($core.bool v) { $_setBool(16, v); }
+  set allowResetPassword($core.bool v) { $_setBool(16, v); }
   @$pb.TagNumber(17)
-  $core.bool hasBlocked() => $_has(16);
+  $core.bool hasAllowResetPassword() => $_has(16);
   @$pb.TagNumber(17)
-  void clearBlocked() => clearField(17);
+  void clearAllowResetPassword() => clearField(17);
 
   @$pb.TagNumber(18)
-  $core.bool get admin => $_getBF(17);
+  $core.bool get blocked => $_getBF(17);
   @$pb.TagNumber(18)
-  set admin($core.bool v) { $_setBool(17, v); }
+  set blocked($core.bool v) { $_setBool(17, v); }
   @$pb.TagNumber(18)
-  $core.bool hasAdmin() => $_has(17);
+  $core.bool hasBlocked() => $_has(17);
   @$pb.TagNumber(18)
-  void clearAdmin() => clearField(18);
+  void clearBlocked() => clearField(18);
 
   @$pb.TagNumber(19)
-  $1.Timestamp get createdAt => $_getN(18);
+  $core.bool get admin => $_getBF(18);
   @$pb.TagNumber(19)
-  set createdAt($1.Timestamp v) { setField(19, v); }
+  set admin($core.bool v) { $_setBool(18, v); }
   @$pb.TagNumber(19)
-  $core.bool hasCreatedAt() => $_has(18);
+  $core.bool hasAdmin() => $_has(18);
   @$pb.TagNumber(19)
-  void clearCreatedAt() => clearField(19);
-  @$pb.TagNumber(19)
-  $1.Timestamp ensureCreatedAt() => $_ensure(18);
+  void clearAdmin() => clearField(19);
 
   @$pb.TagNumber(20)
-  $1.Timestamp get updatedAt => $_getN(19);
+  $1.Timestamp get createdAt => $_getN(19);
   @$pb.TagNumber(20)
-  set updatedAt($1.Timestamp v) { setField(20, v); }
+  set createdAt($1.Timestamp v) { setField(20, v); }
   @$pb.TagNumber(20)
-  $core.bool hasUpdatedAt() => $_has(19);
+  $core.bool hasCreatedAt() => $_has(19);
   @$pb.TagNumber(20)
-  void clearUpdatedAt() => clearField(20);
+  void clearCreatedAt() => clearField(20);
   @$pb.TagNumber(20)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(19);
+  $1.Timestamp ensureCreatedAt() => $_ensure(19);
 
   @$pb.TagNumber(21)
-  $1.Timestamp get birthDate => $_getN(20);
+  $1.Timestamp get updatedAt => $_getN(20);
   @$pb.TagNumber(21)
-  set birthDate($1.Timestamp v) { setField(21, v); }
+  set updatedAt($1.Timestamp v) { setField(21, v); }
   @$pb.TagNumber(21)
-  $core.bool hasBirthDate() => $_has(20);
+  $core.bool hasUpdatedAt() => $_has(20);
   @$pb.TagNumber(21)
-  void clearBirthDate() => clearField(21);
+  void clearUpdatedAt() => clearField(21);
   @$pb.TagNumber(21)
-  $1.Timestamp ensureBirthDate() => $_ensure(20);
+  $1.Timestamp ensureUpdatedAt() => $_ensure(20);
+
+  @$pb.TagNumber(22)
+  $1.Timestamp get birthDate => $_getN(21);
+  @$pb.TagNumber(22)
+  set birthDate($1.Timestamp v) { setField(22, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasBirthDate() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearBirthDate() => clearField(22);
+  @$pb.TagNumber(22)
+  $1.Timestamp ensureBirthDate() => $_ensure(21);
 }
 
 class Token extends $pb.GeneratedMessage {
