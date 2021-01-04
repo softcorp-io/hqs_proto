@@ -17,7 +17,7 @@ service UserService {
     rpc UpdateAllowances(User) returns (Response) {}
     rpc UpdatePassword(UpdatePasswordRequest) returns (Response) {}
     rpc UpdateBlockUser(User) returns (Response) {}
-    rpc EmailResetPasswordToken(User) returns (Token) {}
+    rpc EmailResetPasswordToken(User) returns (Response) {}
     rpc ResetPassword(Token) returns (Response) {}
     rpc Auth(User) returns (Token) {}
     rpc ValidateToken(Token) returns (Token) {}
