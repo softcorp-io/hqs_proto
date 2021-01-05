@@ -55,8 +55,9 @@ message User {
 
 message Token {
     string token = 1;
-    bool valid = 2;
-    repeated Error errors = 3;
+    string url = 2;
+    bool valid = 3;
+    repeated Error errors = 4;
 }
 
 message Auth {

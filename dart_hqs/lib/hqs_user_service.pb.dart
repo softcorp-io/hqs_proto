@@ -269,8 +269,9 @@ class User extends $pb.GeneratedMessage {
 class Token extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Token', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserService'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
-    ..pc<Error>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
+    ..pc<Error>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
     ..hasRequiredFields = false
   ;
 
@@ -307,16 +308,25 @@ class Token extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.bool get valid => $_getBF(1);
+  $core.String get url => $_getSZ(1);
   @$pb.TagNumber(2)
-  set valid($core.bool v) { $_setBool(1, v); }
+  set url($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasValid() => $_has(1);
+  $core.bool hasUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearValid() => clearField(2);
+  void clearUrl() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<Error> get errors => $_getList(2);
+  $core.bool get valid => $_getBF(2);
+  @$pb.TagNumber(3)
+  set valid($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasValid() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValid() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<Error> get errors => $_getList(3);
 }
 
 class Auth extends $pb.GeneratedMessage {
