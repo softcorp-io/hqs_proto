@@ -5,6 +5,7 @@ package UserService;
 import "google/protobuf/timestamp.proto";
 
 service UserService {
+    rpc Ping(Request) returns (Response) {}
     rpc Create(User) returns (Response) {}
     rpc GenerateSignupToken(User) returns (Token) {}
     rpc Signup(User) returns (Response) {}
