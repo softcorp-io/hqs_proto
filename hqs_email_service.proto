@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package EmailService;
+package api;
 
 service EmailService {
     rpc SendResetPasswordEmail(ResetPasswordEmail) returns (Response) {}

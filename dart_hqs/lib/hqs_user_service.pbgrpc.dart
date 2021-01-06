@@ -15,97 +15,97 @@ export 'hqs_user_service.pb.dart';
 
 class UserServiceClient extends $grpc.Client {
   static final _$ping = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/UserService.UserService/Ping',
+      '/api.UserService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$create = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/Create',
+      '/api.UserService/Create',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$generateSignupToken = $grpc.ClientMethod<$0.User, $0.Token>(
-      '/UserService.UserService/GenerateSignupToken',
+      '/api.UserService/GenerateSignupToken',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$signup = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/Signup',
+      '/api.UserService/Signup',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$get = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/Get',
+      '/api.UserService/Get',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$getByToken = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/UserService.UserService/GetByToken',
+      '/api.UserService/GetByToken',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$getByEmail = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/GetByEmail',
+      '/api.UserService/GetByEmail',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$getAll = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/UserService.UserService/GetAll',
+      '/api.UserService/GetAll',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$delete = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/Delete',
+      '/api.UserService/Delete',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$updateProfile = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/UpdateProfile',
+      '/api.UserService/UpdateProfile',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$updateAllowances = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/UpdateAllowances',
+      '/api.UserService/UpdateAllowances',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$updatePassword =
       $grpc.ClientMethod<$0.UpdatePasswordRequest, $0.Response>(
-          '/UserService.UserService/UpdatePassword',
+          '/api.UserService/UpdatePassword',
           ($0.UpdatePasswordRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$updateBlockUser = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/UpdateBlockUser',
+      '/api.UserService/UpdateBlockUser',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$emailResetPasswordToken =
       $grpc.ClientMethod<$0.User, $0.Response>(
-          '/UserService.UserService/EmailResetPasswordToken',
+          '/api.UserService/EmailResetPasswordToken',
           ($0.User value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$resetPassword =
       $grpc.ClientMethod<$0.ResetPasswordRequest, $0.Response>(
-          '/UserService.UserService/ResetPassword',
+          '/api.UserService/ResetPassword',
           ($0.ResetPasswordRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$auth = $grpc.ClientMethod<$0.User, $0.Token>(
-      '/UserService.UserService/Auth',
+      '/api.UserService/Auth',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$validateToken = $grpc.ClientMethod<$0.Token, $0.Token>(
-      '/UserService.UserService/ValidateToken',
+      '/api.UserService/ValidateToken',
       ($0.Token value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$blockToken = $grpc.ClientMethod<$0.Token, $0.Token>(
-      '/UserService.UserService/BlockToken',
+      '/api.UserService/BlockToken',
       ($0.Token value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$blockTokenByID =
       $grpc.ClientMethod<$0.BlockTokenRequest, $0.Token>(
-          '/UserService.UserService/BlockTokenByID',
+          '/api.UserService/BlockTokenByID',
           ($0.BlockTokenRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$blockUsersTokens = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/UserService.UserService/BlockUsersTokens',
+      '/api.UserService/BlockUsersTokens',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$getAuthHistory =
       $grpc.ClientMethod<$0.Request, $0.AuthHistory>(
-          '/UserService.UserService/GetAuthHistory',
+          '/api.UserService/GetAuthHistory',
           ($0.Request value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.AuthHistory.fromBuffer(value));
   static final _$uploadImage =
       $grpc.ClientMethod<$0.UploadImageRequest, $0.UploadImageResponse>(
-          '/UserService.UserService/UploadImage',
+          '/api.UserService/UploadImage',
           ($0.UploadImageRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.UploadImageResponse.fromBuffer(value));
@@ -285,7 +285,7 @@ class UserServiceClient extends $grpc.Client {
 }
 
 abstract class UserServiceBase extends $grpc.Service {
-  $core.String get $name => 'UserService.UserService';
+  $core.String get $name => 'api.UserService';
 
   UserServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(

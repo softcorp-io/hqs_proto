@@ -16,11 +16,11 @@ export 'hqs_email_service.pb.dart';
 class EmailServiceClient extends $grpc.Client {
   static final _$sendResetPasswordEmail =
       $grpc.ClientMethod<$0.ResetPasswordEmail, $0.Response>(
-          '/EmailService.EmailService/SendResetPasswordEmail',
+          '/api.EmailService/SendResetPasswordEmail',
           ($0.ResetPasswordEmail value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$ping = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/EmailService.EmailService/Ping',
+      '/api.EmailService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
 
@@ -45,7 +45,7 @@ class EmailServiceClient extends $grpc.Client {
 }
 
 abstract class EmailServiceBase extends $grpc.Service {
-  $core.String get $name => 'EmailService.EmailService';
+  $core.String get $name => 'api.EmailService';
 
   EmailServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.ResetPasswordEmail, $0.Response>(

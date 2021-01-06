@@ -19,7 +19,7 @@ class DepartmentServiceClient extends $grpc.Client {
 }
 
 abstract class DepartmentServiceBase extends $grpc.Service {
-  $core.String get $name => 'DepartmentService.DepartmentService';
+  $core.String get $name => 'api.DepartmentService';
 
   DepartmentServiceBase() {}
 }

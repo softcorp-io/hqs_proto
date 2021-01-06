@@ -39,7 +39,7 @@ const Token$json = const {
     const {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
     const {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
     const {'1': 'valid', '3': 3, '4': 1, '5': 8, '10': 'valid'},
-    const {'1': 'errors', '3': 4, '4': 3, '5': 11, '6': '.UserService.Error', '10': 'errors'},
+    const {'1': 'errors', '3': 4, '4': 3, '5': 11, '6': '.api.Error', '10': 'errors'},
   ],
 };
 
@@ -61,9 +61,9 @@ const Auth$json = const {
 const Response$json = const {
   '1': 'Response',
   '2': const [
-    const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.UserService.User', '10': 'user'},
-    const {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.UserService.User', '10': 'users'},
-    const {'1': 'errors', '3': 4, '4': 3, '5': 11, '6': '.UserService.Error', '10': 'errors'},
+    const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.api.User', '10': 'user'},
+    const {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.api.User', '10': 'users'},
+    const {'1': 'errors', '3': 4, '4': 3, '5': 11, '6': '.api.Error', '10': 'errors'},
     const {'1': 'Success', '3': 5, '4': 1, '5': 8, '10': 'Success'},
   ],
 };
@@ -78,7 +78,7 @@ const UploadImageResponse$json = const {
 const AuthHistory$json = const {
   '1': 'AuthHistory',
   '2': const [
-    const {'1': 'authHistory', '3': 1, '4': 3, '5': 11, '6': '.UserService.Auth', '10': 'authHistory'},
+    const {'1': 'authHistory', '3': 1, '4': 3, '5': 11, '6': '.api.Auth', '10': 'authHistory'},
   ],
 };
 
