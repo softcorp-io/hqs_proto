@@ -18,7 +18,8 @@ message InviteNewUserEmail {
 }
 
 message Response {
-    repeated Error errors = 1;
+    string data = 1;
+    repeated Error errors = 2;
 }
 
 message Request{}

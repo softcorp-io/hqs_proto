@@ -103,7 +103,8 @@ class InviteNewUserEmail extends $pb.GeneratedMessage {
 
 class Response extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EmailService'), createEmptyInstance: create)
-    ..pc<Error>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data')
+    ..pc<Error>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
     ..hasRequiredFields = false
   ;
 
@@ -131,7 +132,16 @@ class Response extends $pb.GeneratedMessage {
   static Response _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Error> get errors => $_getList(0);
+  $core.String get data => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set data($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<Error> get errors => $_getList(1);
 }
 
 class Request extends $pb.GeneratedMessage {
