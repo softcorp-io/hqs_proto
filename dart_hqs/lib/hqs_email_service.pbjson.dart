@@ -24,7 +24,7 @@ const InviteNewUserEmail$json = const {
 const Response$json = const {
   '1': 'Response',
   '2': const [
-    const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.api.Error', '10': 'errors'},
+    const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.hqs.Error', '10': 'errors'},
   ],
 };
 
