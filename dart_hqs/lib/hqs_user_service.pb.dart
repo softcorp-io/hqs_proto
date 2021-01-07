@@ -34,7 +34,7 @@ class User extends $pb.GeneratedMessage {
     ..aOB(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'admin')
     ..aOM<$1.Timestamp>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthDate', protoName: 'birthDate', subBuilder: $1.Timestamp.create)
+    ..aOM<Date>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthDate', protoName: 'birthDate', subBuilder: Date.create)
     ..hasRequiredFields = false
   ;
 
@@ -255,15 +255,74 @@ class User extends $pb.GeneratedMessage {
   $1.Timestamp ensureUpdatedAt() => $_ensure(20);
 
   @$pb.TagNumber(22)
-  $1.Timestamp get birthDate => $_getN(21);
+  Date get birthDate => $_getN(21);
   @$pb.TagNumber(22)
-  set birthDate($1.Timestamp v) { setField(22, v); }
+  set birthDate(Date v) { setField(22, v); }
   @$pb.TagNumber(22)
   $core.bool hasBirthDate() => $_has(21);
   @$pb.TagNumber(22)
   void clearBirthDate() => clearField(22);
   @$pb.TagNumber(22)
-  $1.Timestamp ensureBirthDate() => $_ensure(21);
+  Date ensureBirthDate() => $_ensure(21);
+}
+
+class Date extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Date', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserService'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'year', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'day', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'month', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  Date._() : super();
+  factory Date() => create();
+  factory Date.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Date.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Date clone() => Date()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Date copyWith(void Function(Date) updates) => super.copyWith((message) => updates(message as Date)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Date create() => Date._();
+  Date createEmptyInstance() => create();
+  static $pb.PbList<Date> createRepeated() => $pb.PbList<Date>();
+  @$core.pragma('dart2js:noInline')
+  static Date getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Date>(create);
+  static Date _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get year => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set year($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasYear() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearYear() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get day => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set day($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDay() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDay() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get month => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set month($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMonth() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMonth() => clearField(3);
 }
 
 class Token extends $pb.GeneratedMessage {
