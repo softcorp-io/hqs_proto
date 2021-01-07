@@ -29,16 +29,7 @@ const User$json = const {
     const {'1': 'admin', '3': 19, '4': 1, '5': 8, '10': 'admin'},
     const {'1': 'createdAt', '3': 20, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     const {'1': 'updatedAt', '3': 21, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    const {'1': 'birthDate', '3': 22, '4': 1, '5': 11, '6': '.UserService.Date', '10': 'birthDate'},
-  ],
-};
-
-const Date$json = const {
-  '1': 'Date',
-  '2': const [
-    const {'1': 'year', '3': 1, '4': 1, '5': 5, '10': 'year'},
-    const {'1': 'day', '3': 2, '4': 1, '5': 5, '10': 'day'},
-    const {'1': 'month', '3': 3, '4': 1, '5': 5, '10': 'month'},
+    const {'1': 'birthday', '3': 22, '4': 1, '5': 9, '10': 'birthday'},
   ],
 };
 

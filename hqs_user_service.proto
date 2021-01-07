@@ -51,13 +51,7 @@ message User {
     bool admin = 19;
 	google.protobuf.Timestamp createdAt = 20;
     google.protobuf.Timestamp updatedAt = 21;
-    Date birthDate = 22;
-}
-
-message Date {
-    int32 year = 1;
-    int32 day = 2;
-    int32 month = 3; 
+    string birthday = 22;
 }
 
 message Token {
