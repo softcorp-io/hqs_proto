@@ -6,6 +6,11 @@ import "google/protobuf/timestamp.proto";
 
 service PrivilegeService {
     rpc Ping(Request) returns (Response) {}
+    rpc Create(Privilege) returns (Response) {}
+    rpc Update(Privilege) returns (Response) {}
+    rpc Get(Privilege) returns (Response) {}
+    rpc GetAll(Privilege) returns (Response) {}
+    rpc Delete(Privilege) returns (Response) {}
 }
 
 message Privilege {
@@ -22,7 +27,10 @@ message Privilege {
 }
 
 message Response {
-    repeated Error errors = 1;
+    Privilege privilege = 1;
+    repeated Privilege privileges = 3;
+    repeated Error errors = 4;
+    bool Success = 5;
 }
 
 message Request {}

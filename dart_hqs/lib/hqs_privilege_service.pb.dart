@@ -146,7 +146,10 @@ class Privilege extends $pb.GeneratedMessage {
 
 class Response extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Response', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PrivilegeService'), createEmptyInstance: create)
-    ..pc<Error>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOM<Privilege>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privilege', subBuilder: Privilege.create)
+    ..pc<Privilege>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privileges', $pb.PbFieldType.PM, subBuilder: Privilege.create)
+    ..pc<Error>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'Success', protoName: 'Success')
     ..hasRequiredFields = false
   ;
 
@@ -174,7 +177,30 @@ class Response extends $pb.GeneratedMessage {
   static Response _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Error> get errors => $_getList(0);
+  Privilege get privilege => $_getN(0);
+  @$pb.TagNumber(1)
+  set privilege(Privilege v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPrivilege() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrivilege() => clearField(1);
+  @$pb.TagNumber(1)
+  Privilege ensurePrivilege() => $_ensure(0);
+
+  @$pb.TagNumber(3)
+  $core.List<Privilege> get privileges => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.List<Error> get errors => $_getList(2);
+
+  @$pb.TagNumber(5)
+  $core.bool get success => $_getBF(3);
+  @$pb.TagNumber(5)
+  set success($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSuccess() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearSuccess() => clearField(5);
 }
 
 class Request extends $pb.GeneratedMessage {

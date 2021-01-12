@@ -24,7 +24,10 @@ const Privilege$json = const {
 const Response$json = const {
   '1': 'Response',
   '2': const [
-    const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.PrivilegeService.Error', '10': 'errors'},
+    const {'1': 'privilege', '3': 1, '4': 1, '5': 11, '6': '.PrivilegeService.Privilege', '10': 'privilege'},
+    const {'1': 'privileges', '3': 3, '4': 3, '5': 11, '6': '.PrivilegeService.Privilege', '10': 'privileges'},
+    const {'1': 'errors', '3': 4, '4': 3, '5': 11, '6': '.PrivilegeService.Error', '10': 'errors'},
+    const {'1': 'Success', '3': 5, '4': 1, '5': 8, '10': 'Success'},
   ],
 };
 
