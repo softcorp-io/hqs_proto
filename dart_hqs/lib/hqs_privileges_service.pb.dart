@@ -17,7 +17,7 @@ class Privilege extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'viewAllUsers', protoName: 'viewAllUsers')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createUser', protoName: 'createUser')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateUserPrivileges', protoName: 'updateUserPrivileges')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatePrivileges', protoName: 'updatePrivileges')
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deleteUser', protoName: 'deleteUser')
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blockUser', protoName: 'blockUser')
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendResetPasswordEmail', protoName: 'sendResetPasswordEmail')
@@ -86,13 +86,13 @@ class Privilege extends $pb.GeneratedMessage {
   void clearCreateUser() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get updateUserPrivileges => $_getBF(4);
+  $core.bool get updatePrivileges => $_getBF(4);
   @$pb.TagNumber(5)
-  set updateUserPrivileges($core.bool v) { $_setBool(4, v); }
+  set updatePrivileges($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasUpdateUserPrivileges() => $_has(4);
+  $core.bool hasUpdatePrivileges() => $_has(4);
   @$pb.TagNumber(5)
-  void clearUpdateUserPrivileges() => clearField(5);
+  void clearUpdatePrivileges() => clearField(5);
 
   @$pb.TagNumber(6)
   $core.bool get deleteUser => $_getBF(5);
