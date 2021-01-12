@@ -18,7 +18,7 @@ message Privilege {
     string name = 2;
     bool viewAllUsers = 3;
     bool createUser = 4;
-    bool updatePrivileges = 5;
+    bool asignPrivileges = 5;
     bool deleteUser = 6;
     bool blockUser = 7;
     bool sendResetPasswordEmail = 8;

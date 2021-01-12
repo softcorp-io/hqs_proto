@@ -12,7 +12,7 @@ const Privilege$json = const {
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'viewAllUsers', '3': 3, '4': 1, '5': 8, '10': 'viewAllUsers'},
     const {'1': 'createUser', '3': 4, '4': 1, '5': 8, '10': 'createUser'},
-    const {'1': 'updatePrivileges', '3': 5, '4': 1, '5': 8, '10': 'updatePrivileges'},
+    const {'1': 'asignPrivileges', '3': 5, '4': 1, '5': 8, '10': 'asignPrivileges'},
     const {'1': 'deleteUser', '3': 6, '4': 1, '5': 8, '10': 'deleteUser'},
     const {'1': 'blockUser', '3': 7, '4': 1, '5': 8, '10': 'blockUser'},
     const {'1': 'sendResetPasswordEmail', '3': 8, '4': 1, '5': 8, '10': 'sendResetPasswordEmail'},
