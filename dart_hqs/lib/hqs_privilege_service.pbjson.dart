@@ -24,7 +24,7 @@ const Privilege$json = const {
 const Response$json = const {
   '1': 'Response',
   '2': const [
-    const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.PrivilegesService.Error', '10': 'errors'},
+    const {'1': 'errors', '3': 1, '4': 3, '5': 11, '6': '.PrivilegeService.Error', '10': 'errors'},
   ],
 };
 

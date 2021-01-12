@@ -13,13 +13,13 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'hqs_privilege_service.pb.dart' as $0;
 export 'hqs_privilege_service.pb.dart';
 
-class PrivilegesServiceClient extends $grpc.Client {
+class PrivilegeServiceClient extends $grpc.Client {
   static final _$ping = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/PrivilegesService.PrivilegesService/Ping',
+      '/PrivilegeService.PrivilegeService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
 
-  PrivilegesServiceClient($grpc.ClientChannel channel,
+  PrivilegeServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options})
       : super(channel, options: options);
 
@@ -31,10 +31,10 @@ class PrivilegesServiceClient extends $grpc.Client {
   }
 }
 
-abstract class PrivilegesServiceBase extends $grpc.Service {
-  $core.String get $name => 'PrivilegesService.PrivilegesService';
+abstract class PrivilegeServiceBase extends $grpc.Service {
+  $core.String get $name => 'PrivilegeService.PrivilegeService';
 
-  PrivilegesServiceBase() {
+  PrivilegeServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(
         'Ping',
         ping_Pre,
