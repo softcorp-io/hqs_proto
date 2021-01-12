@@ -13,6 +13,7 @@ email-proto:
 	sudo protoc -I. --go_out=plugins=grpc:./go_hqs/hqs_email_service \./hqs_email_service.proto && \
 	sudo protoc -I. --dart_out=grpc:./dart_hqs/lib/ \./hqs_email_service.proto
 
-.PHONY: init-proto
-init-proto:
-	./init.sh
+PHONY: priv-proto
+priv-proto:
+	sudo protoc -I. --go_out=plugins=grpc:./go_hqs/hqs_privileges_service \./hqs_privileges_service.proto && \
+	sudo protoc -I. --dart_out=grpc:./dart_hqs/lib/ \./hqs_privileges_service.proto

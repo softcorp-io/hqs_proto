@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package PrivilegesService;
+
+import "google/protobuf/timestamp.proto";
+
+service PrivilegesService {
+    rpc Ping(Request) returns (Response) {}
+}
+
+message Privilege {
+    string id = 1;
+    string name = 2;
+    bool viewAllUsers = 3;
+    bool createUser = 4;
+    bool updateUserPrivileges = 5;
+    bool deleteUser = 6;
+    bool blockUser = 7;
+    bool sendResetPasswordEmail = 8;
+	google.protobuf.Timestamp createdAt = 9;
+    google.protobuf.Timestamp updatedAt = 10;
+}
+
+message Response {
+    repeated Error errors = 1;
+}
+
+message Request {}
+
+message Error {
+    int32 code = 1;
+    string description = 2;
+}
