@@ -15,5 +15,5 @@ email-proto:
 
 PHONY: priv-proto
 priv-proto:
-	sudo protoc -I. --go_out=plugins=grpc:./go_hqs/hqs_privileges_service \./hqs_privileges_service.proto && \
-	sudo protoc -I. --dart_out=grpc:./dart_hqs/lib/ \./hqs_privileges_service.proto
+	sudo protoc -I. --go_out=plugins=grpc:./go_hqs/hqs_privilege_service \./hqs_privilege_service.proto && \
+	sudo protoc -I. --dart_out=grpc:./dart_hqs/lib/ \./hqs_privilege_service.proto
