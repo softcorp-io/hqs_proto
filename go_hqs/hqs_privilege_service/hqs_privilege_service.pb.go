@@ -363,7 +363,7 @@ var file_hqs_privilege_service_proto_rawDesc = []byte{
 	0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04,
 	0x63, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
 	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0xa9, 0x03, 0x0a, 0x10, 0x50, 0x72, 0x69, 0x76, 0x69,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x32, 0xf9, 0x03, 0x0a, 0x10, 0x50, 0x72, 0x69, 0x76, 0x69,
 	0x6c, 0x65, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3f, 0x0a, 0x04, 0x50,
 	0x69, 0x6e, 0x67, 0x12, 0x19, 0x2e, 0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a,
@@ -380,6 +380,11 @@ var file_hqs_privilege_service_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x40, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12, 0x1b, 0x2e,
 	0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x2e, 0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x1a, 0x1a, 0x2e, 0x50, 0x72, 0x69,
+	0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4e, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x44,
+	0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x12,
+	0x19, 0x2e, 0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x50, 0x72, 0x69,
 	0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41,
 	0x6c, 0x6c, 0x12, 0x1b, 0x2e, 0x50, 0x72, 0x69, 0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x53, 0x65,
@@ -423,16 +428,18 @@ var file_hqs_privilege_service_proto_depIdxs = []int32{
 	0,  // 6: PrivilegeService.PrivilegeService.Create:input_type -> PrivilegeService.Privilege
 	0,  // 7: PrivilegeService.PrivilegeService.Update:input_type -> PrivilegeService.Privilege
 	0,  // 8: PrivilegeService.PrivilegeService.Get:input_type -> PrivilegeService.Privilege
-	0,  // 9: PrivilegeService.PrivilegeService.GetAll:input_type -> PrivilegeService.Privilege
-	0,  // 10: PrivilegeService.PrivilegeService.Delete:input_type -> PrivilegeService.Privilege
-	1,  // 11: PrivilegeService.PrivilegeService.Ping:output_type -> PrivilegeService.Response
-	1,  // 12: PrivilegeService.PrivilegeService.Create:output_type -> PrivilegeService.Response
-	1,  // 13: PrivilegeService.PrivilegeService.Update:output_type -> PrivilegeService.Response
-	1,  // 14: PrivilegeService.PrivilegeService.Get:output_type -> PrivilegeService.Response
-	1,  // 15: PrivilegeService.PrivilegeService.GetAll:output_type -> PrivilegeService.Response
-	1,  // 16: PrivilegeService.PrivilegeService.Delete:output_type -> PrivilegeService.Response
-	11, // [11:17] is the sub-list for method output_type
-	5,  // [5:11] is the sub-list for method input_type
+	2,  // 9: PrivilegeService.PrivilegeService.GetDefaultPrivilege:input_type -> PrivilegeService.Request
+	0,  // 10: PrivilegeService.PrivilegeService.GetAll:input_type -> PrivilegeService.Privilege
+	0,  // 11: PrivilegeService.PrivilegeService.Delete:input_type -> PrivilegeService.Privilege
+	1,  // 12: PrivilegeService.PrivilegeService.Ping:output_type -> PrivilegeService.Response
+	1,  // 13: PrivilegeService.PrivilegeService.Create:output_type -> PrivilegeService.Response
+	1,  // 14: PrivilegeService.PrivilegeService.Update:output_type -> PrivilegeService.Response
+	1,  // 15: PrivilegeService.PrivilegeService.Get:output_type -> PrivilegeService.Response
+	1,  // 16: PrivilegeService.PrivilegeService.GetDefaultPrivilege:output_type -> PrivilegeService.Response
+	1,  // 17: PrivilegeService.PrivilegeService.GetAll:output_type -> PrivilegeService.Response
+	1,  // 18: PrivilegeService.PrivilegeService.Delete:output_type -> PrivilegeService.Response
+	12, // [12:19] is the sub-list for method output_type
+	5,  // [5:12] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
 	5,  // [5:5] is the sub-list for extension extendee
 	0,  // [0:5] is the sub-list for field type_name
@@ -529,6 +536,7 @@ type PrivilegeServiceClient interface {
 	Create(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error)
 	Update(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error)
 	Get(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error)
+	GetDefaultPrivilege(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	GetAll(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error)
 	Delete(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error)
 }
@@ -577,6 +585,15 @@ func (c *privilegeServiceClient) Get(ctx context.Context, in *Privilege, opts ..
 	return out, nil
 }
 
+func (c *privilegeServiceClient) GetDefaultPrivilege(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/PrivilegeService.PrivilegeService/GetDefaultPrivilege", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *privilegeServiceClient) GetAll(ctx context.Context, in *Privilege, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, "/PrivilegeService.PrivilegeService/GetAll", in, out, opts...)
@@ -601,6 +618,7 @@ type PrivilegeServiceServer interface {
 	Create(context.Context, *Privilege) (*Response, error)
 	Update(context.Context, *Privilege) (*Response, error)
 	Get(context.Context, *Privilege) (*Response, error)
+	GetDefaultPrivilege(context.Context, *Request) (*Response, error)
 	GetAll(context.Context, *Privilege) (*Response, error)
 	Delete(context.Context, *Privilege) (*Response, error)
 }
@@ -620,6 +638,9 @@ func (*UnimplementedPrivilegeServiceServer) Update(context.Context, *Privilege) 
 }
 func (*UnimplementedPrivilegeServiceServer) Get(context.Context, *Privilege) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (*UnimplementedPrivilegeServiceServer) GetDefaultPrivilege(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDefaultPrivilege not implemented")
 }
 func (*UnimplementedPrivilegeServiceServer) GetAll(context.Context, *Privilege) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
@@ -704,6 +725,24 @@ func _PrivilegeService_Get_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PrivilegeService_GetDefaultPrivilege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrivilegeServiceServer).GetDefaultPrivilege(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/PrivilegeService.PrivilegeService/GetDefaultPrivilege",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrivilegeServiceServer).GetDefaultPrivilege(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PrivilegeService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Privilege)
 	if err := dec(in); err != nil {
@@ -759,6 +798,10 @@ var _PrivilegeService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Get",
 			Handler:    _PrivilegeService_Get_Handler,
+		},
+		{
+			MethodName: "GetDefaultPrivilege",
+			Handler:    _PrivilegeService_GetDefaultPrivilege_Handler,
 		},
 		{
 			MethodName: "GetAll",

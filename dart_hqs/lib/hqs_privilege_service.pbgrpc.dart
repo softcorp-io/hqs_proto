@@ -30,6 +30,11 @@ class PrivilegeServiceClient extends $grpc.Client {
       '/PrivilegeService.PrivilegeService/Get',
       ($0.Privilege value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
+  static final _$getDefaultPrivilege =
+      $grpc.ClientMethod<$0.Request, $0.Response>(
+          '/PrivilegeService.PrivilegeService/GetDefaultPrivilege',
+          ($0.Request value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$getAll = $grpc.ClientMethod<$0.Privilege, $0.Response>(
       '/PrivilegeService.PrivilegeService/GetAll',
       ($0.Privilege value) => value.writeToBuffer(),
@@ -67,6 +72,14 @@ class PrivilegeServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.Response> get($0.Privilege request,
       {$grpc.CallOptions options}) {
     final call = $createCall(_$get, $async.Stream.fromIterable([request]),
+        options: options);
+    return $grpc.ResponseFuture(call);
+  }
+
+  $grpc.ResponseFuture<$0.Response> getDefaultPrivilege($0.Request request,
+      {$grpc.CallOptions options}) {
+    final call = $createCall(
+        _$getDefaultPrivilege, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -118,6 +131,13 @@ abstract class PrivilegeServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Privilege.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(
+        'GetDefaultPrivilege',
+        getDefaultPrivilege_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
+        ($0.Response value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Privilege, $0.Response>(
         'GetAll',
         getAll_Pre,
@@ -154,6 +174,11 @@ abstract class PrivilegeServiceBase extends $grpc.Service {
     return get(call, await request);
   }
 
+  $async.Future<$0.Response> getDefaultPrivilege_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Request> request) async {
+    return getDefaultPrivilege(call, await request);
+  }
+
   $async.Future<$0.Response> getAll_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Privilege> request) async {
     return getAll(call, await request);
@@ -170,6 +195,8 @@ abstract class PrivilegeServiceBase extends $grpc.Service {
   $async.Future<$0.Response> update(
       $grpc.ServiceCall call, $0.Privilege request);
   $async.Future<$0.Response> get($grpc.ServiceCall call, $0.Privilege request);
+  $async.Future<$0.Response> getDefaultPrivilege(
+      $grpc.ServiceCall call, $0.Request request);
   $async.Future<$0.Response> getAll(
       $grpc.ServiceCall call, $0.Privilege request);
   $async.Future<$0.Response> delete(

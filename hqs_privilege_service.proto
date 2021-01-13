@@ -9,6 +9,7 @@ service PrivilegeService {
     rpc Create(Privilege) returns (Response) {}
     rpc Update(Privilege) returns (Response) {}
     rpc Get(Privilege) returns (Response) {}
+    rpc GetDefaultPrivilege(Request) returns (Response) {} 
     rpc GetAll(Privilege) returns (Response) {}
     rpc Delete(Privilege) returns (Response) {}
 }
