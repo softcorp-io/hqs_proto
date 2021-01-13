@@ -58,7 +58,8 @@ message Token {
     string token = 1;
     string url = 2;
     bool valid = 3;
-    repeated Error errors = 4;
+    bool managePrivileges = 4;
+    repeated Error errors = 5;
 }
 
 message Auth {

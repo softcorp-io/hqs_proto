@@ -269,7 +269,8 @@ class Token extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
-    ..pc<Error>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managePrivileges', protoName: 'managePrivileges')
+    ..pc<Error>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
     ..hasRequiredFields = false
   ;
 
@@ -324,7 +325,16 @@ class Token extends $pb.GeneratedMessage {
   void clearValid() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<Error> get errors => $_getList(3);
+  $core.bool get managePrivileges => $_getBF(3);
+  @$pb.TagNumber(4)
+  set managePrivileges($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasManagePrivileges() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearManagePrivileges() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<Error> get errors => $_getList(4);
 }
 
 class Auth extends $pb.GeneratedMessage {
