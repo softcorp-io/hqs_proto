@@ -15,7 +15,7 @@ service UserService {
     rpc GetAll(Request) returns (Response) {}
 	rpc Delete(User) returns (Response) {}
     rpc UpdateProfile(User) returns (Response) {}
-    rpc UpdateAllowances(User) returns (Response) {}
+    rpc UpdatePrivileges(User) returns (Response) {}
     rpc UpdatePassword(UpdatePasswordRequest) returns (Response) {}
     rpc UpdateBlockUser(User) returns (Response) {}
     rpc EmailResetPasswordToken(User) returns (Response) {}

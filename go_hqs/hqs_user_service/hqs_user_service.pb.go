@@ -1047,8 +1047,8 @@ var file_hqs_user_service_proto_rawDesc = []byte{
 	0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x12, 0x11, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x15, 0x2e, 0x55, 0x73, 0x65,
 	0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x6c, 0x6c,
-	0x6f, 0x77, 0x61, 0x6e, 0x63, 0x65, 0x73, 0x12, 0x11, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x53, 0x65,
+	0x65, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x72, 0x69,
+	0x76, 0x69, 0x6c, 0x65, 0x67, 0x65, 0x73, 0x12, 0x11, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x15, 0x2e, 0x55, 0x73, 0x65,
 	0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x22, 0x00, 0x12, 0x4d, 0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x73,
@@ -1150,7 +1150,7 @@ var file_hqs_user_service_proto_depIdxs = []int32{
 	6,  // 17: UserService.UserService.GetAll:input_type -> UserService.Request
 	0,  // 18: UserService.UserService.Delete:input_type -> UserService.User
 	0,  // 19: UserService.UserService.UpdateProfile:input_type -> UserService.User
-	0,  // 20: UserService.UserService.UpdateAllowances:input_type -> UserService.User
+	0,  // 20: UserService.UserService.UpdatePrivileges:input_type -> UserService.User
 	7,  // 21: UserService.UserService.UpdatePassword:input_type -> UserService.UpdatePasswordRequest
 	0,  // 22: UserService.UserService.UpdateBlockUser:input_type -> UserService.User
 	0,  // 23: UserService.UserService.EmailResetPasswordToken:input_type -> UserService.User
@@ -1172,7 +1172,7 @@ var file_hqs_user_service_proto_depIdxs = []int32{
 	3,  // 39: UserService.UserService.GetAll:output_type -> UserService.Response
 	3,  // 40: UserService.UserService.Delete:output_type -> UserService.Response
 	3,  // 41: UserService.UserService.UpdateProfile:output_type -> UserService.Response
-	3,  // 42: UserService.UserService.UpdateAllowances:output_type -> UserService.Response
+	3,  // 42: UserService.UserService.UpdatePrivileges:output_type -> UserService.Response
 	3,  // 43: UserService.UserService.UpdatePassword:output_type -> UserService.Response
 	3,  // 44: UserService.UserService.UpdateBlockUser:output_type -> UserService.Response
 	3,  // 45: UserService.UserService.EmailResetPasswordToken:output_type -> UserService.Response
@@ -1388,7 +1388,7 @@ type UserServiceClient interface {
 	GetAll(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Delete(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
 	UpdateProfile(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
-	UpdateAllowances(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
+	UpdatePrivileges(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
 	UpdatePassword(ctx context.Context, in *UpdatePasswordRequest, opts ...grpc.CallOption) (*Response, error)
 	UpdateBlockUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
 	EmailResetPasswordToken(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error)
@@ -1500,9 +1500,9 @@ func (c *userServiceClient) UpdateProfile(ctx context.Context, in *User, opts ..
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateAllowances(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error) {
+func (c *userServiceClient) UpdatePrivileges(ctx context.Context, in *User, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
-	err := c.cc.Invoke(ctx, "/UserService.UserService/UpdateAllowances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/UserService.UserService/UpdatePrivileges", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1645,7 +1645,7 @@ type UserServiceServer interface {
 	GetAll(context.Context, *Request) (*Response, error)
 	Delete(context.Context, *User) (*Response, error)
 	UpdateProfile(context.Context, *User) (*Response, error)
-	UpdateAllowances(context.Context, *User) (*Response, error)
+	UpdatePrivileges(context.Context, *User) (*Response, error)
 	UpdatePassword(context.Context, *UpdatePasswordRequest) (*Response, error)
 	UpdateBlockUser(context.Context, *User) (*Response, error)
 	EmailResetPasswordToken(context.Context, *User) (*Response, error)
@@ -1693,8 +1693,8 @@ func (*UnimplementedUserServiceServer) Delete(context.Context, *User) (*Response
 func (*UnimplementedUserServiceServer) UpdateProfile(context.Context, *User) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
 }
-func (*UnimplementedUserServiceServer) UpdateAllowances(context.Context, *User) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAllowances not implemented")
+func (*UnimplementedUserServiceServer) UpdatePrivileges(context.Context, *User) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePrivileges not implemented")
 }
 func (*UnimplementedUserServiceServer) UpdatePassword(context.Context, *UpdatePasswordRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePassword not implemented")
@@ -1914,20 +1914,20 @@ func _UserService_UpdateProfile_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateAllowances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_UpdatePrivileges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateAllowances(ctx, in)
+		return srv.(UserServiceServer).UpdatePrivileges(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/UserService.UserService/UpdateAllowances",
+		FullMethod: "/UserService.UserService/UpdatePrivileges",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateAllowances(ctx, req.(*User))
+		return srv.(UserServiceServer).UpdatePrivileges(ctx, req.(*User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2183,8 +2183,8 @@ var _UserService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UpdateProfile_Handler,
 		},
 		{
-			MethodName: "UpdateAllowances",
-			Handler:    _UserService_UpdateAllowances_Handler,
+			MethodName: "UpdatePrivileges",
+			Handler:    _UserService_UpdatePrivileges_Handler,
 		},
 		{
 			MethodName: "UpdatePassword",

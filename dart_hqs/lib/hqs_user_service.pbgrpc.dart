@@ -54,8 +54,8 @@ class UserServiceClient extends $grpc.Client {
       '/UserService.UserService/UpdateProfile',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
-  static final _$updateAllowances = $grpc.ClientMethod<$0.User, $0.Response>(
-      '/UserService.UserService/UpdateAllowances',
+  static final _$updatePrivileges = $grpc.ClientMethod<$0.User, $0.Response>(
+      '/UserService.UserService/UpdatePrivileges',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$updatePassword =
@@ -187,10 +187,10 @@ class UserServiceClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Response> updateAllowances($0.User request,
+  $grpc.ResponseFuture<$0.Response> updatePrivileges($0.User request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
-        _$updateAllowances, $async.Stream.fromIterable([request]),
+        _$updatePrivileges, $async.Stream.fromIterable([request]),
         options: options);
     return $grpc.ResponseFuture(call);
   }
@@ -359,8 +359,8 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.User.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.User, $0.Response>(
-        'UpdateAllowances',
-        updateAllowances_Pre,
+        'UpdatePrivileges',
+        updatePrivileges_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.User.fromBuffer(value),
@@ -498,9 +498,9 @@ abstract class UserServiceBase extends $grpc.Service {
     return updateProfile(call, await request);
   }
 
-  $async.Future<$0.Response> updateAllowances_Pre(
+  $async.Future<$0.Response> updatePrivileges_Pre(
       $grpc.ServiceCall call, $async.Future<$0.User> request) async {
-    return updateAllowances(call, await request);
+    return updatePrivileges(call, await request);
   }
 
   $async.Future<$0.Response> updatePassword_Pre($grpc.ServiceCall call,
@@ -567,7 +567,7 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.Response> delete($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Response> updateProfile(
       $grpc.ServiceCall call, $0.User request);
-  $async.Future<$0.Response> updateAllowances(
+  $async.Future<$0.Response> updatePrivileges(
       $grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Response> updatePassword(
       $grpc.ServiceCall call, $0.UpdatePasswordRequest request);
