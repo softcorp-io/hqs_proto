@@ -39,19 +39,14 @@ message User {
     string dialCode = 7;
     string image = 8;
     string description = 9;
-    string title = 10;
-    bool gender = 11;
-    bool allowView = 12;
-    bool allowCreate = 13;
-    bool allowPermission = 14;
-    bool allowDelete = 15;
-    bool allowBlock = 16;
-    bool allowResetPassword = 17;
-    bool blocked = 18;
-    bool admin = 19;
-	google.protobuf.Timestamp createdAt = 20;
-    google.protobuf.Timestamp updatedAt = 21;
-    string birthday = 22;
+    string birthday = 10;
+    string title = 11;
+    bool gender = 12;
+    string privilegeID = 13;
+    bool blocked = 14;
+    bool admin = 15;
+	google.protobuf.Timestamp createdAt = 16;
+    google.protobuf.Timestamp updatedAt = 17;
 }
 
 message Token {
