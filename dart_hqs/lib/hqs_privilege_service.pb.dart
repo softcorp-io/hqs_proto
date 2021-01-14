@@ -20,9 +20,11 @@ class Privilege extends $pb.GeneratedMessage {
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managePrivileges', protoName: 'managePrivileges')
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deleteUser', protoName: 'deleteUser')
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blockUser', protoName: 'blockUser')
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendResetPasswordEmail', protoName: 'sendResetPasswordEmail')
-    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'root')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'default')
+    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendResetPasswordEmail', protoName: 'sendResetPasswordEmail')
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -113,35 +115,53 @@ class Privilege extends $pb.GeneratedMessage {
   void clearBlockUser() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get sendResetPasswordEmail => $_getBF(7);
+  $core.bool get root => $_getBF(7);
   @$pb.TagNumber(8)
-  set sendResetPasswordEmail($core.bool v) { $_setBool(7, v); }
+  set root($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasSendResetPasswordEmail() => $_has(7);
+  $core.bool hasRoot() => $_has(7);
   @$pb.TagNumber(8)
-  void clearSendResetPasswordEmail() => clearField(8);
+  void clearRoot() => clearField(8);
 
   @$pb.TagNumber(9)
-  $1.Timestamp get createdAt => $_getN(8);
+  $core.bool get default_9 => $_getBF(8);
   @$pb.TagNumber(9)
-  set createdAt($1.Timestamp v) { setField(9, v); }
+  set default_9($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreatedAt() => $_has(8);
+  $core.bool hasDefault_9() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedAt() => clearField(9);
-  @$pb.TagNumber(9)
-  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+  void clearDefault_9() => clearField(9);
 
   @$pb.TagNumber(10)
-  $1.Timestamp get updatedAt => $_getN(9);
+  $core.bool get sendResetPasswordEmail => $_getBF(9);
   @$pb.TagNumber(10)
-  set updatedAt($1.Timestamp v) { setField(10, v); }
+  set sendResetPasswordEmail($core.bool v) { $_setBool(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasUpdatedAt() => $_has(9);
+  $core.bool hasSendResetPasswordEmail() => $_has(9);
   @$pb.TagNumber(10)
-  void clearUpdatedAt() => clearField(10);
-  @$pb.TagNumber(10)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(9);
+  void clearSendResetPasswordEmail() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
 }
 
 class Response extends $pb.GeneratedMessage {

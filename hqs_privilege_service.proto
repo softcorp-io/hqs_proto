@@ -23,9 +23,11 @@ message Privilege {
     bool managePrivileges = 5;
     bool deleteUser = 6;
     bool blockUser = 7;
-    bool sendResetPasswordEmail = 8;
-	google.protobuf.Timestamp createdAt = 9;
-    google.protobuf.Timestamp updatedAt = 10;
+    bool root = 8;
+    bool default = 9;
+    bool sendResetPasswordEmail = 10;
+	google.protobuf.Timestamp createdAt = 11;
+    google.protobuf.Timestamp updatedAt = 12;
 }
 
 message Response {

@@ -15,9 +15,11 @@ const Privilege$json = const {
     const {'1': 'managePrivileges', '3': 5, '4': 1, '5': 8, '10': 'managePrivileges'},
     const {'1': 'deleteUser', '3': 6, '4': 1, '5': 8, '10': 'deleteUser'},
     const {'1': 'blockUser', '3': 7, '4': 1, '5': 8, '10': 'blockUser'},
-    const {'1': 'sendResetPasswordEmail', '3': 8, '4': 1, '5': 8, '10': 'sendResetPasswordEmail'},
-    const {'1': 'createdAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'root', '3': 8, '4': 1, '5': 8, '10': 'root'},
+    const {'1': 'default', '3': 9, '4': 1, '5': 8, '10': 'default'},
+    const {'1': 'sendResetPasswordEmail', '3': 10, '4': 1, '5': 8, '10': 'sendResetPasswordEmail'},
+    const {'1': 'createdAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
