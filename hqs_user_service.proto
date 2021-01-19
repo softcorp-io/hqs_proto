@@ -64,10 +64,9 @@ message Auth {
     double latitude = 4;
     string device = 5;
     string typeOf = 6;
-    bool valid = 7;
-	google.protobuf.Timestamp createdAt = 8;
-    google.protobuf.Timestamp expiresAt = 9;
-    google.protobuf.Timestamp lastUsedAt = 10;
+	google.protobuf.Timestamp createdAt = 7;
+    google.protobuf.Timestamp expiresAt = 8;
+    google.protobuf.Timestamp lastUsedAt = 9;
 }
 
 message Response {

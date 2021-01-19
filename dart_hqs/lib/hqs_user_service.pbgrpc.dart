@@ -22,9 +22,9 @@ class UserServiceClient extends $grpc.Client {
       '/UserService.UserService/Create',
       ($0.User value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
-  static final _$generateSignupToken = $grpc.ClientMethod<$0.User, $0.Token>(
+  static final _$generateSignupToken = $grpc.ClientMethod<$0.Request, $0.Token>(
       '/UserService.UserService/GenerateSignupToken',
-      ($0.User value) => value.writeToBuffer(),
+      ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Token.fromBuffer(value));
   static final _$signup = $grpc.ClientMethod<$0.User, $0.Response>(
       '/UserService.UserService/Signup',
@@ -127,7 +127,7 @@ class UserServiceClient extends $grpc.Client {
     return $grpc.ResponseFuture(call);
   }
 
-  $grpc.ResponseFuture<$0.Token> generateSignupToken($0.User request,
+  $grpc.ResponseFuture<$0.Token> generateSignupToken($0.Request request,
       {$grpc.CallOptions options}) {
     final call = $createCall(
         _$generateSignupToken, $async.Stream.fromIterable([request]),
@@ -302,12 +302,12 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.User.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.User, $0.Token>(
+    $addMethod($grpc.ServiceMethod<$0.Request, $0.Token>(
         'GenerateSignupToken',
         generateSignupToken_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.User.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
         ($0.Token value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.User, $0.Response>(
         'Signup',
@@ -459,7 +459,7 @@ abstract class UserServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.Token> generateSignupToken_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.User> request) async {
+      $grpc.ServiceCall call, $async.Future<$0.Request> request) async {
     return generateSignupToken(call, await request);
   }
 
@@ -556,7 +556,7 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.Response> ping($grpc.ServiceCall call, $0.Request request);
   $async.Future<$0.Response> create($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Token> generateSignupToken(
-      $grpc.ServiceCall call, $0.User request);
+      $grpc.ServiceCall call, $0.Request request);
   $async.Future<$0.Response> signup($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Response> get($grpc.ServiceCall call, $0.User request);
   $async.Future<$0.Response> getByToken(

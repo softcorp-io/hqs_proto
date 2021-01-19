@@ -295,10 +295,9 @@ class Auth extends $pb.GeneratedMessage {
     ..a<$core.double>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latitude', $pb.PbFieldType.OD)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeOf', protoName: 'typeOf')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
-    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', protoName: 'expiresAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastUsedAt', protoName: 'lastUsedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresAt', protoName: 'expiresAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastUsedAt', protoName: 'lastUsedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -380,46 +379,37 @@ class Auth extends $pb.GeneratedMessage {
   void clearTypeOf() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get valid => $_getBF(6);
+  $1.Timestamp get createdAt => $_getN(6);
   @$pb.TagNumber(7)
-  set valid($core.bool v) { $_setBool(6, v); }
+  set createdAt($1.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasValid() => $_has(6);
+  $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearValid() => clearField(7);
+  void clearCreatedAt() => clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $1.Timestamp get createdAt => $_getN(7);
+  $1.Timestamp get expiresAt => $_getN(7);
   @$pb.TagNumber(8)
-  set createdAt($1.Timestamp v) { setField(8, v); }
+  set expiresAt($1.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasCreatedAt() => $_has(7);
+  $core.bool hasExpiresAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCreatedAt() => clearField(8);
+  void clearExpiresAt() => clearField(8);
   @$pb.TagNumber(8)
-  $1.Timestamp ensureCreatedAt() => $_ensure(7);
+  $1.Timestamp ensureExpiresAt() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $1.Timestamp get expiresAt => $_getN(8);
+  $1.Timestamp get lastUsedAt => $_getN(8);
   @$pb.TagNumber(9)
-  set expiresAt($1.Timestamp v) { setField(9, v); }
+  set lastUsedAt($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasExpiresAt() => $_has(8);
+  $core.bool hasLastUsedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearExpiresAt() => clearField(9);
+  void clearLastUsedAt() => clearField(9);
   @$pb.TagNumber(9)
-  $1.Timestamp ensureExpiresAt() => $_ensure(8);
-
-  @$pb.TagNumber(10)
-  $1.Timestamp get lastUsedAt => $_getN(9);
-  @$pb.TagNumber(10)
-  set lastUsedAt($1.Timestamp v) { setField(10, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasLastUsedAt() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearLastUsedAt() => clearField(10);
-  @$pb.TagNumber(10)
-  $1.Timestamp ensureLastUsedAt() => $_ensure(9);
+  $1.Timestamp ensureLastUsedAt() => $_ensure(8);
 }
 
 class Response extends $pb.GeneratedMessage {
