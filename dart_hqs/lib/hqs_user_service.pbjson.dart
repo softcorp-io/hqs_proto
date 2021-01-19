@@ -32,10 +32,11 @@ const Token$json = const {
   '1': 'Token',
   '2': const [
     const {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
-    const {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
-    const {'1': 'valid', '3': 3, '4': 1, '5': 8, '10': 'valid'},
-    const {'1': 'managePrivileges', '3': 4, '4': 1, '5': 8, '10': 'managePrivileges'},
-    const {'1': 'errors', '3': 5, '4': 3, '5': 11, '6': '.UserService.Error', '10': 'errors'},
+    const {'1': 'id', '3': 2, '4': 1, '5': 9, '10': 'id'},
+    const {'1': 'url', '3': 3, '4': 1, '5': 9, '10': 'url'},
+    const {'1': 'valid', '3': 4, '4': 1, '5': 8, '10': 'valid'},
+    const {'1': 'managePrivileges', '3': 5, '4': 1, '5': 8, '10': 'managePrivileges'},
+    const {'1': 'errors', '3': 6, '4': 3, '5': 11, '6': '.UserService.Error', '10': 'errors'},
   ],
 };
 

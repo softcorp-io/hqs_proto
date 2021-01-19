@@ -217,10 +217,11 @@ class User extends $pb.GeneratedMessage {
 class Token extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Token', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserService'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managePrivileges', protoName: 'managePrivileges')
-    ..pc<Error>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'valid')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'managePrivileges', protoName: 'managePrivileges')
+    ..pc<Error>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: Error.create)
     ..hasRequiredFields = false
   ;
 
@@ -257,34 +258,43 @@ class Token extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get url => $_getSZ(1);
+  $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
-  set url($core.String v) { $_setString(1, v); }
+  set id($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasUrl() => $_has(1);
+  $core.bool hasId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUrl() => clearField(2);
+  void clearId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get valid => $_getBF(2);
+  $core.String get url => $_getSZ(2);
   @$pb.TagNumber(3)
-  set valid($core.bool v) { $_setBool(2, v); }
+  set url($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasValid() => $_has(2);
+  $core.bool hasUrl() => $_has(2);
   @$pb.TagNumber(3)
-  void clearValid() => clearField(3);
+  void clearUrl() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get managePrivileges => $_getBF(3);
+  $core.bool get valid => $_getBF(3);
   @$pb.TagNumber(4)
-  set managePrivileges($core.bool v) { $_setBool(3, v); }
+  set valid($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasManagePrivileges() => $_has(3);
+  $core.bool hasValid() => $_has(3);
   @$pb.TagNumber(4)
-  void clearManagePrivileges() => clearField(4);
+  void clearValid() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<Error> get errors => $_getList(4);
+  $core.bool get managePrivileges => $_getBF(4);
+  @$pb.TagNumber(5)
+  set managePrivileges($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasManagePrivileges() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearManagePrivileges() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<Error> get errors => $_getList(5);
 }
 
 class Auth extends $pb.GeneratedMessage {

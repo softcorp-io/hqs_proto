@@ -51,10 +51,11 @@ message User {
 
 message Token {
     string token = 1;
-    string url = 2;
-    bool valid = 3;
-    bool managePrivileges = 4;
-    repeated Error errors = 5;
+    string id = 2;
+    string url = 3;
+    bool valid = 4;
+    bool managePrivileges = 5;
+    repeated Error errors = 6;
 }
 
 message Auth {
